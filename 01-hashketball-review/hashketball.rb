@@ -118,14 +118,119 @@ def game_hash
 end
 
 
-# def num_points_scored(player_name)
+def num_points_scored(player_name)
+  # figure out which team the player is on?
+  # merge all players together in one hash
+  # all_players = game_hash[:home][:players].merge(game_hash[:away][:players])
+  # all_players = players_hash
+  # itterate through each level of the hash:
+    # - check the players key and look through each player
+    # - see if it matches player_name
+    # - if it matches, return the points value of that player
+    # player_points = all_players[player_name][:points]
+    # puts "#{player_name} scored #{player_points} points"
+    get_player(player_name)[:points]
+    # all_players[player_name][:points]
+end
+
+def shoe_size(player_name)
+  get_player(player_name)[:shoe]
+end
+
+def players_hash
+  all_players ={}
+  game_hash.each do |turf, details|
+    details[:players].each do |player_name, player_stats|
+      all_players[player_name] = player_stats
+    end
+  end
+  all_players
+end
+
+def get_player(player_name)
+ players_hash[player_name]
+end
+
+
+
+
+get_player("Jeff Adrien")
+
+
+
+
+
+
+
+
+
+
+
+
+num_points_scored("Bismak Biyombo")
+num_points_scored("DeSagna Diop")
+num_points_scored("Alan Anderson")
+num_points_scored("Jason Terry")
+
+
+# test
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Break large problems into smaller problems
+# Lives in quick feedback loops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #   # get a list of all the players
 #   # find the player whose name matches the argument 'player_name'
 #   # return that player's points
-# end
-
-
-
 
 # # EXERCISE:
 # # Define a method called get_names that takes an array of instructors
