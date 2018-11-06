@@ -1,0 +1,16 @@
+require_relative 'config/environment'
+
+desc 'Loads up a console!'
+task :console do
+  Pry.start
+end
+
+desc 'Saying hello!'
+task :hi do
+  puts "HELLLLOOOOOO!!!"
+end
+
+desc "tells you your name (which is bob)"
+task :get_name do
+  puts "Your name is Bob!"
+end
