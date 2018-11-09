@@ -1,10 +1,20 @@
 class Tweet
-  attr_accessor :message, :username, :id
+  attr_accessor :message, :username, :id, :age, :happy_level
 
-  def initialize(message, username, id=nil)
-    @message = message
-    @username = username
-    @id = id
+  # kevin = Tweet.new(
+  #   username:"KevyWevy",
+  #   message: "the message",
+  #   happy_level: true,
+  #   age: 31
+  # )
+
+  # Tweet.new("the message", "kevyWevy")
+  # Tweet.new({message: "the message", username: "KevyWevy"})
+  def initialize(attributes_hash)
+    attributes_hash.each do |key, value|
+      binding.pry
+      self.send("#{key}=", value)
+    end
   end
 
   def self.all
