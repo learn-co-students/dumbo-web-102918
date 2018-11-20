@@ -4,13 +4,16 @@
 * Build out CRUD using sinatra
 
 # RESTful CRUD
-* Reading
-* Creating
+* Reading ✅
+* New ✅
+* Creating✅
   * Form
   * mass assignment
+* Edit form
 * Updating
   * one small caveat
 * Deleting
 
 ## If we have time
 * Refactoring
+
