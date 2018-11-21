@@ -1,0 +1,15 @@
+<nav>
+  <a href="/students/new">New Student</a>
+  <br />
+  <br />
+</nav>
+</nav>
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <a href="students/<%= student.id %>">
+        <%= student.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>

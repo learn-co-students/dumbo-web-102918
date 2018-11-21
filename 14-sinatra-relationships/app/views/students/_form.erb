@@ -1,0 +1,26 @@
+<ul>
+  <li>
+    <label for="name">name:</label>
+    <input id="name" type="text" name="student[name]" value="<%= @student.name %>" />
+  </li>
+
+  <li>
+    <label for="favorite_band_id">favorite band:</label>
+    <!-- <input id="favorite_band_id" type="text" name="student[favorite_band_id]" value="<%= @student.favorite_band_id %>"  /> -->
+
+
+    <select name="student[favorite_band_id]">
+      <% Band.all.each do |band| %>
+        <option selected="<%= band.id == @student.favorite_band_id %>" value="<%= band.id %>"><%= band.name %></option>
+      <% end %>
+    </select>
+  </li>
+  <li>
+    <label for="favorite_movie">favorite_movie:</label>
+    <input id="favorite_movie" type="text" name="student[favorite_movie]" value="<%= @student.favorite_movie %>"  />
+  </li>
+  <li>
+    <label for="age">age:</label>
+    <input id="age" type="number" name="student[age]" value="<%= @student.age %>" />
+  </li>
+</ul>

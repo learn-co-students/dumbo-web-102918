@@ -1,0 +1,19 @@
+<h2>I am <%= @student.name %>!</h2>
+
+<ul>
+  <li>I am <strong><%= @student.age %></strong> years old...</li>
+  <li><strong>My favorite band:</strong> 
+
+<a href="/bands/<%= @student.favorite_band.id %>">
+    <%= @student.favorite_band.name %>
+</a>
+
+  </li>
+  <li><strong>My favorite movie:</strong> <%= @student.favorite_movie %></li>
+</ul>
+<a href="/students/<%= @student.id %>/edit">Edit Student</a>
+
+<form method="POST" action="/students/<%= @student.id %>">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="delete <%= @student.name %>" />
+</form>
