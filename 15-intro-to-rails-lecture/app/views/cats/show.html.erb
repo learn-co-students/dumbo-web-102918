@@ -1,0 +1,7 @@
+<h1>Here's a Cat</h1>
+<% if @cat.aggression > 50 %>
+  <p style="color: red">Name: <%= @cat.name %></p>
+<% else %>
+  <p>Name: <%= @cat.name %></p>
+<% end %>
+<p>Aggression: <%= @cat.aggression %></p>
