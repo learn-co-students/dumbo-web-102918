@@ -1,0 +1,17 @@
+<% if flash[:error] %>
+  <ul>
+    <% flash[:error].each do |error_message| %>
+      <li style="color: red">
+        <%= error_message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@cat) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :aggression %>
+  <%= f.text_field :aggression %>
+  <%= f.submit %>
+<% end %>
