@@ -1,0 +1,8 @@
+<h1><%= @train.name %></h1>
+<h3><%= @train.name %>'s Passengers:</h3>
+<ul>
+  <% @train.passengers.each do |passener| %>
+    <li><%= link_to passener.name, passener %></li>
+  <% end %>
+</ul>
+<%= link_to "Edit #{@train.name} 🚊", edit_train_path(@train) %>

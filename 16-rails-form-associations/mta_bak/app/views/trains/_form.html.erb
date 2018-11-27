@@ -1,0 +1,13 @@
+<% if flash[:error] %>
+  <ul>
+  <% flash[:error].each do |error_message| %>
+    <li style="color:red;"><%= error_message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @train do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>

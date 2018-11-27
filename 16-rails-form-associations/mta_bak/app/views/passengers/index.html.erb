@@ -1,0 +1,6 @@
+<h1> All passeners</h1>
+<ul>
+<% @passengers.each do |passenger| %>
+  <li><%= link_to passenger.name, passenger %></li>
+<% end %>
+</ul>

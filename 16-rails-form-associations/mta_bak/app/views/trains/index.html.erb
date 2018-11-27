@@ -1,0 +1,13 @@
+<h1>Here are the trains</h1>
+<ul>
+<% @trains.each do |train| %>
+  <li><%= link_to train.name, train %>
+    <ul>
+      <li>Passengers:</li>
+      <% train.passengers.each do |passenger| %>
+      <li><%= passenger.name %></li>
+      <% end %>
+    </ul>
+  </li>
+<% end %>
+</ul>

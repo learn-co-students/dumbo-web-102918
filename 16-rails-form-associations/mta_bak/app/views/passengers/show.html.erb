@@ -1,0 +1,4 @@
+<h1>
+  <%= @passenger.name %> rides the <%= link_to @passenger.train.name, @passenger.train %>
+</h1>
+<%= link_to "Edit #{@passenger.name}", edit_passenger_path(@passenger) %>
