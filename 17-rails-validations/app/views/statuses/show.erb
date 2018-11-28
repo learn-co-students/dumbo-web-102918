@@ -5,36 +5,13 @@
   <%= f.submit "delete #{ @status.body }" %>
 <% end %>
 
-
+<!-- 
 <h2>Reactions to this status:</h2>
 <ul>
-<% @status.reactions.each do |reaction| %>
+<%# @status.reactions.each do |reaction| %>
   <li>
-  <%= reaction.emoji %>
+  <%#= reaction.emoji %>
   </li>
-<% end %>
+<%# end %>
 </ul>
-
-
-<h2>Add reaction:</h2>
-<%= form_for @status_reaction do |f| %>
-
-<ul>
-  <!-- <li> -->
-    <%# f.label :status_id %>
-<!--     <select name="status_id">
-      <option value="1">🎆</option>
-      <option value="2">🌘</option>
-    </select> -->
-    <%= f.hidden_field :status_id, value: @status.id %>
-  <!-- </li> -->
-  <li>
-    <%= f.label :reaction_id %>
-    <%# f.text_field :reaction_id %>
-    <%= f.collection_select :reaction_id, @reactions, :id, :emoji_a_lot %>
-  </li>
-</ul>
-
-  <%= f.submit %>
-
-<% end %>
+ -->

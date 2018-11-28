@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_163912) do
+ActiveRecord::Schema.define(version: 2018_11_07_155201) do
 
   create_table "reactions", force: :cascade do |t|
     t.string "emoji"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "status_reactions", force: :cascade do |t|
-    t.integer "status_id"
-    t.integer "reaction_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["reaction_id"], name: "index_status_reactions_on_reaction_id"
-    t.index ["status_id"], name: "index_status_reactions_on_status_id"
   end
 
   create_table "statuses", force: :cascade do |t|

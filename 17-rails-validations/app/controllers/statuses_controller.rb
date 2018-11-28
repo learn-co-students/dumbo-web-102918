@@ -4,12 +4,12 @@ class StatusesController < ApplicationController
     if request.path != statuses_path
       redirect_to statuses_url
     end
-    @statuses = Status.includes(:reactions).all
+    @statuses = Status.all #.includes(:reactions).all
   end
 
   def show
     @status = Status.find(params[:id])
-    @status_reaction = StatusReaction.new
+    # @status_reaction = StatusReaction.new
     @reactions = Reaction.all
   end
 
