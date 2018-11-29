@@ -14,9 +14,9 @@ class ReactionsController < ApplicationController
 
   def create
     @reaction = Reaction.create(reaction_params)
-    if @reaction.valid?
+    if @reaction.save
       redirect_to @reaction
-    else
+    else 
       render :new
     end
   end

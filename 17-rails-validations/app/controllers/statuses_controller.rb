@@ -4,7 +4,7 @@ class StatusesController < ApplicationController
     if request.path != statuses_path
       redirect_to statuses_url
     end
-    @statuses = Status.all #.includes(:reactions).all
+    @statuses = Status.includes(:reactions).all
   end
 
   def show
@@ -19,11 +19,11 @@ class StatusesController < ApplicationController
 
   def create
     @status = Status.new(status_params)
-    if @status.save
+    if @status.save # will return true if it's valid and saved to db
       # it worked!
       redirect_to @status
     else
-      # invalid
+      # something was invalid
       render :new
     end
   end

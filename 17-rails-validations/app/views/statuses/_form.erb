@@ -1,3 +1,14 @@
+
+<% if @status.errors.count > 0 %>
+  <ol class="errors">
+  <% @status.errors.full_messages.each do |message| %>
+    <li>
+    <%= message %>
+    </li>
+  <% end %>
+  </ol>
+<% end %>
+
 <%= form_for @status do |f| %>
   <ul>
     <li>

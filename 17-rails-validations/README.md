@@ -14,3 +14,5 @@
 * Uniqueness
   * scoped
 * ActiveRecord performance tuning
+
+

@@ -1,3 +1,15 @@
+
+<% unless @reaction.valid? %>
+  <ol class="errors">
+  <% @reaction.errors.full_messages.each do |message| %>
+    <li>
+    <%= message %>
+    </li>
+  <% end %>
+  </ol>
+<% end %>
+
+
 <%= form_for @reaction do |f| %>
   <ul>
     <li>
