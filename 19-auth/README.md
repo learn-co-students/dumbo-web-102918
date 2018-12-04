@@ -15,7 +15,7 @@
   * Migration
   * Controller
   * View
-  * Validations
+  * Validations 
 
 * Log in
   * Routes 

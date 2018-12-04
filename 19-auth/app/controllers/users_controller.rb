@@ -19,7 +19,14 @@ class UsersController < ApplicationController
     # @user = User.create({ username: user_params[:username], 
     #   password_digest: BCrypt::Password.create(user_params[:password]) })
     
-    @user = User.create(user_params)
+    @user = User.new(user_params)
+    if @user.save
+      log_in!(@user)
+      redirect_to colors_path
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_path
+    end
 
 
     # redirect to homepage

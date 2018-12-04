@@ -2,6 +2,7 @@ class ColorsController < ApplicationController
 
 
   def index
+    # byebug
     if request.path != colors_path
       redirect_to colors_path
     end
