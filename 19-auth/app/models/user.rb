@@ -13,4 +13,10 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  has_many :votes 
+  
+  def remaining_votes
+    5 - self.votes.count
+  end
+
 end
