@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Event</title>
+  <style>
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 680px;
+      list-style: none;
+    }
+    .box {
+      width: 125px;
+      height: 125px;
+      margin: 20px;
+    }
+    .one {
+      background-color: hsla(45, 90%, 50%, 0.75);
+    }
+    .two {
+      background-color:  hsla(90, 50%, 50%, 0.75);
+    }
+    .three {
+      background-color: hsla(135, 50%, 50%, 0.75);
+    }
+    .four {
+      background-color: hsla(180, 50%, 50%, 0.75);
+    }
+    .five {
+      background-color: hsla(225, 50%, 50%, 0.75);
+    }
+    .six {
+      background-color: hsla(270, 50%, 50%, 0.75);
+    }
+    .seven {
+      background-color: hsla(315, 50%, 50%, 0.75);
+    }
+    .eight {
+      background-color: hsla(360, 50%, 50%, 0.75);
+    }
+    .form-container {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: hsla(0, 0%, 0%, 0.5);
+      z-index: 100;
+    }
+
+    form {
+      position: relative;
+      margin: auto;
+      margin-top: 50%;
+      transform: translateY(-50%);
+      padding: 30px;
+      text-align: center;
+      width: 500px;
+      background-color: hsla(180, 50%, 90%, 1);
+    }
+
+    .close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="box one"></li>
+    <li class="box two"></li>
+    <li class="box three"></li>
+    <li class="box four"></li>
+    <li class="box five"></li>
+    <li class="box six"></li>
+    <li class="box seven"></li>
+    <li class="box eight"></li>
+  </ul>
+
+  <div class="form-container">
+    <form action="#">
+      <label for="ssn">Please Enter Your Social Security Number</label>
+      <br>
+      <input id= "ssn" type="text" placeholder="xxx-xx-xxx">
+      <input type="submit">
+      <button class="close-button">x</button>
+    </form>
+  </div>
+  <script src="events.js"></script>
+</body>
+</html>
