@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bubbling vs. Capturing Phase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #sugar {
+      width: 200px;
+      height: 200px;
+      border: 50px solid #888;
+      margin: auto;
+      margin-top: 100px;
+      transform: rotate(-45deg);
+    }
+
+    /* Bubbling page styles */
+    #milk {
+      width: 100px;
+      height: 100px;
+      border: 50px solid #f5f5dc;
+      margin: auto;
+    }
+
+    #espresso {
+      width: 100px;
+      height: 100px;
+      background: #8b4513;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='sugar'>
+    <div id='milk'>
+      <div id="espresso">
+      </div>
+    </div>
+  </div>
+</body>
+<script src="bubbling.js"></script>
+
+</html>
