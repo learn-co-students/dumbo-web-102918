@@ -1,9 +1,11 @@
-### Lecture Objectives
+### Intro to the DOM
+
+## Lecture Objectives
 - Tree of Nodes (The DOM and the parents and siblings within it)
 - Selectors and how to use them (The power and convenience of querySelector)
 - CRUD in the DOM
 
-### The DOM vs. HTML
+## The DOM vs. HTML
 - What is the DOM?
 - Tree of Nodes
 
