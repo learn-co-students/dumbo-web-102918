@@ -1,0 +1,11 @@
+# Key Questions
+- How does the value of `this` work in the context of:
+  - an object method
+    - https://twitter.com/dan_abramov/status/790858537513656320
+  - a constructor method
+  - an object prototype method
+  - a DOM event handler
+- How can I call methods on JavaScript functions and why would I want to?
+- How can I use bind, call, and apply to control the value of this as my code executes?
+- How do arrow functions treat `this` differently than other functions?
+- What happens if I pass an object prototype method as a callback somewhere?
