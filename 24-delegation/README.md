@@ -20,20 +20,3 @@ https://codepen.io/telegram/pen/maJxVV
 2. Bind an event listener to that stable parent
 3. In the event listener, figure out if you clicked on one of the child items (that may or may not be on the dom at DomContentLoaded or whenever you bind your event listeners)
 4. Do the thing (or not)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
