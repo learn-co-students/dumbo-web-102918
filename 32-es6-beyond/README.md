@@ -29,4 +29,5 @@
 
 ## More key questions
 - How can I find out more about which browsers implement newer JS features?
-- How can I find out more about which version JS features were introduced in 
+- How can I find out more about which version JS features were introduced in?
+
