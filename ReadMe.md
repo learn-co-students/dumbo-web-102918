@@ -18,7 +18,7 @@
 
 \*\* React Props
 
-SBATs:
+SWBATs:
 
 - npx create-react-app
 - Virtual DOM
