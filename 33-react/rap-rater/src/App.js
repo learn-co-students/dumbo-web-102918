@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import RapperContainer from "./RapperContainer";
+import RapperCard from "./RapperCard";
 
 //import rapperList
 //create a new component for each rapper <= eventual cool
@@ -66,10 +67,23 @@ class App extends Component {
     ]
   };
 
+  clickHandler = obj => {
+    const newArr = [...this.state.rapperList];
+    newArr.forEach(rapper => {
+      return rapper === obj ? rapper.rating++ : null;
+    });
+    this.setState({
+      rapperList: newArr
+    });
+  };
+
   render() {
     return (
       <div>
-        <RapperContainer rapperList={this.state.rapperList} />
+        <RapperContainer
+          rapperList={this.state.rapperList}
+          clickHandler={this.clickHandler}
+        />
       </div>
     );
   }

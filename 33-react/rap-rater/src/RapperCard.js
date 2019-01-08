@@ -11,8 +11,17 @@ import React from "react";
 const RapperCard = props => {
   return (
     <div>
-      <img src={props.image} alt="" className="rapperImage" />
-      <button>Upvote</button>
+      <img
+        src={
+          props.rapper.rating > 0
+            ? props.rapper.happyImage
+            : props.rapper.sadImage
+        }
+        alt=""
+        className="rapperImage"
+      />
+      <h3>{props.rapper.rating}</h3>
+      <button onClick={() => props.clickHandler(props.rapper)}>Upvote</button>
       <button>Downvote</button>
     </div>
   );
