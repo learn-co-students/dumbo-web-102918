@@ -1,28 +1,11 @@
-\*\* Intro to MOD 4
+React State && Events
 
-- Final MOD -- what does this mean?
-- Thinking like Developers not Students
-- Career readiness (completing tasks, time management, etc...)
+- Understanding Component Hierarchy
+- Why use state
+- Conditional rendering
 
-\*\* What's Different
+Deliverables:
 
-- Code Challenge -- 51%
-- Everything else -- 49%
-  - What is "Everything else"?
-
-\*\* How to be successful in MOD 4
-
-- Don't focus on the code challenge focus on the code
-- Demonstrate good habits
-- Fight the burnout
-
-\*\* React Props
-
-SWBATs:
-
-- npx create-react-app
-- Virtual DOM
-- What is JSX
-- What is Babel/Webpack
-- What are props
-- Practice passing props from parent components to children
+- Use the above to Render a list of rappers to the page
+- Create an event that changes rapper's rating
+- Conditionally render an image based on rapper's rating
