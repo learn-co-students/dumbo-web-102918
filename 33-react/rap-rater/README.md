@@ -1,15 +1,10 @@
-Deliverables:
+Objectives:
 
-- Create a form to add a rapper to our list
-- list should rerender to show new rapper
-
-BONUS:
-
-- Add a Search
-
-SWABTS:
-
-- Event Handling
-- Controlled vs Uncontrolled
-- How to write a controlled form
-- Managing events in forms
+- Learn what component lifecylce methods are
+- Discuss the most used methods
+  - componentDidMount()
+  - componentDidUpdate()
+  - componentWillUnmount()
+- When do we use them
+- How do we use them
+- How to fetch in React

@@ -8,23 +8,37 @@ import React from "react";
 // }
 
 //Presentational Component: use if you do not need to use any JS class methods or React.Component tools/methods
-const RapperCard = props => {
-  return (
-    <div>
-      <img
-        src={
-          props.rapper.rating > 0
-            ? props.rapper.happyImage
-            : props.rapper.sadImage
-        }
-        alt=""
-        className="rapperImage"
-      />
-      <h3>{props.rapper.rating}</h3>
-      <button onClick={() => props.clickHandler(props.rapper)}>Upvote</button>
-      <button>Downvote</button>
-    </div>
-  );
-};
+class RapperCard extends React.Component {
+  // componentDidMount() {
+  //   console.log("Rapper Card Did Mount");
+  // }
+
+  componentWillUnmount() {
+    alert("Et tu Brute");
+  }
+  render() {
+    return (
+      <div>
+        <img
+          src={
+            this.props.rapper.rating > 0
+              ? this.props.rapper.happyImage
+              : this.props.rapper.sadImage
+          }
+          alt=""
+          className="rapperImage"
+        />
+        <h3>{this.props.rapper.rating}</h3>
+        <button onClick={() => this.props.clickHandler(this.props.rapper)}>
+          Upvote
+        </button>
+        <button>Downvote</button>
+        <button onClick={() => this.props.deleteHandler(this.props.rapper)}>
+          Delete
+        </button>
+      </div>
+    );
+  }
+}
 
 export default RapperCard;
