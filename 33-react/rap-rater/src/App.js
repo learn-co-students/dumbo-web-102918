@@ -100,22 +100,3 @@ class App extends Component {
 }
 
 export default App;
-//
-// <Navbar />
-// {this.state.rapperList.length > 0 ? (
-//   <div>
-// <SearchForm
-//   value={this.state.searchTerm}
-//   changeHandler={this.changeHandler}
-// />
-//     <RapperContainer
-// rapperList={this.state.filteredArr}
-// clickHandler={this.clickHandler}
-// deleteHandler={this.deleteHandler}
-//     />
-//     <NewRapperForm submitHandler={this.submitHandler} />
-//   </div>
-// ) : (
-//   <h1>Loading</h1>
-// )}
-// </div>
