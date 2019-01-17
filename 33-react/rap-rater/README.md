@@ -1,10 +1,32 @@
-Objectives:
+## React Router
 
-- Learn what component lifecylce methods are
-- Discuss the most used methods
-  - componentDidMount()
-  - componentDidUpdate()
-  - componentWillUnmount()
-- When do we use them
-- How do we use them
-- How to fetch in React
+##Setting up
+
+- react-router-dom
+- npm install --save react-router-dom
+- import {BrowserRouter} from 'react-router-dom'
+
+## BrowserRouter
+
+- Listens for route change && makes that information accessible
+
+## Route
+
+- Conditionally render a component based on the route
+- Routing with render vs component
+- Route props
+
+## Switch
+
+- Pick first route that matches
+- Switch w/ dynamic routes
+
+## Link
+
+- Changes the url we see in the browser
+- Must have a 'to' prop
+
+Time Permitting:
+Nested Switch
+Redirect
+History Object

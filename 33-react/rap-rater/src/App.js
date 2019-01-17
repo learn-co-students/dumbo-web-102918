@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import RapperContainer from "./RapperContainer";
-import RapperCard from "./RapperCard";
-import NewRapperForm from "./NewRapperForm";
-import SearchForm from "./SearchForm";
+import RapperContainer from "./Containers/RapperContainer";
+import RapperCard from "./Components/RapperCard";
+import NewRapperForm from "./Components/NewRapperForm";
+import SearchForm from "./Components/SearchForm";
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
 
-//import rapperList
-//create a new component for each rapper <= eventual cool
 class App extends Component {
-  //State is the inherent property of this Component whereas props are injected in
   state = {
     searchTerm: "",
     rapperList: [],
@@ -70,25 +69,53 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.rapperList.length > 0 ? (
-          <div>
-            <SearchForm
-              value={this.state.searchTerm}
-              changeHandler={this.changeHandler}
-            />
-            <RapperContainer
-              rapperList={this.state.filteredArr}
-              clickHandler={this.clickHandler}
-              deleteHandler={this.deleteHandler}
-            />
-            <NewRapperForm submitHandler={this.submitHandler} />
-          </div>
-        ) : (
-          <h1>Loading</h1>
-        )}
+        <Navbar />
+        <Switch>
+          <Route
+            path="/rappers"
+            render={() => {
+              return (
+                <div>
+                  <NewRapperForm submitHandler={this.submitHandler} />
+                  <br />
+                  <SearchForm
+                    value={this.state.searchTerm}
+                    changeHandler={this.changeHandler}
+                  />
+                  <br />
+                  <RapperContainer
+                    rapperList={this.state.filteredArr}
+                    clickHandler={this.clickHandler}
+                    deleteHandler={this.deleteHandler}
+                  />
+                </div>
+              );
+            }}
+          />
+          <Route path="/" component={Home} />
+        </Switch>
       </div>
     );
   }
 }
 
 export default App;
+//
+// <Navbar />
+// {this.state.rapperList.length > 0 ? (
+//   <div>
+// <SearchForm
+//   value={this.state.searchTerm}
+//   changeHandler={this.changeHandler}
+// />
+//     <RapperContainer
+// rapperList={this.state.filteredArr}
+// clickHandler={this.clickHandler}
+// deleteHandler={this.deleteHandler}
+//     />
+//     <NewRapperForm submitHandler={this.submitHandler} />
+//   </div>
+// ) : (
+//   <h1>Loading</h1>
+// )}
+// </div>
