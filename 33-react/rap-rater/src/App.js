@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import "./App.css";
 import RapperContainer from "./Containers/RapperContainer";
 import RapperCard from "./Components/RapperCard";
@@ -31,10 +31,13 @@ class App extends Component {
     newArr.forEach(rapper => {
       return rapper.name === obj.name ? rapper.rating++ : null;
     });
-    this.setState({
-      rapperList: newArr,
-      filteredArr: newArr
-    });
+    this.setState(
+      {
+        rapperList: newArr,
+        filteredArr: newArr
+      },
+      () => this.props.history.push("/rappers")
+    );
   };
 
   deleteHandler = obj => {
@@ -67,6 +70,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("app props", this.props);
     return (
       <div>
         <Navbar />
@@ -74,22 +78,27 @@ class App extends Component {
           <Route
             path="/rappers"
             render={() => {
-              return (
-                <div>
-                  <NewRapperForm submitHandler={this.submitHandler} />
-                  <br />
-                  <SearchForm
-                    value={this.state.searchTerm}
-                    changeHandler={this.changeHandler}
-                  />
-                  <br />
-                  <RapperContainer
-                    rapperList={this.state.filteredArr}
-                    clickHandler={this.clickHandler}
-                    deleteHandler={this.deleteHandler}
-                  />
-                </div>
-              );
+              if (this.state.rapperList.length > 0) {
+                return (
+                  <div>
+                    <NewRapperForm submitHandler={this.submitHandler} />
+                    <br />
+                    <SearchForm
+                      value={this.state.searchTerm}
+                      changeHandler={this.changeHandler}
+                    />
+                    <br />
+                    <RapperContainer
+                      rapperList={this.state.filteredArr}
+                      clickHandler={this.clickHandler}
+                      deleteHandler={this.deleteHandler}
+                    />
+                  </div>
+                );
+              } else {
+                console.log("empty");
+                return <h1>Loading</h1>;
+              }
             }}
           />
           <Route path="/" component={Home} />
@@ -99,4 +108,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

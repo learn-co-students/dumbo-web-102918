@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 const RapperCard = props => {
   return (
     <div>
+      {/*Make my <img> a Link by wrapping it in between open and close <Link> tags*/}
       <Link to={`/rappers/${props.rapper.name}`}>
         <img
           src={
